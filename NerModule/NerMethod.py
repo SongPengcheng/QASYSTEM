@@ -24,7 +24,8 @@ class NerModule(object):
     ):
         super(NerModule,self).__init__()
         self.kb = kb
-
+    def getMentionFromModel(self):
+        return
     def getPossibleMentions(
             self,
             sequence:str=None,
