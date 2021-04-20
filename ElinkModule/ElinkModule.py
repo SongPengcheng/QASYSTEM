@@ -35,7 +35,6 @@ class ElinkModule(object):
         entity_list = {}
         value_list = {}
         entities = self.kb.m2e_index[mention]
-        print(entities)
         if entities:
             for entity in entities:
                 if "<" in entity and ">" in entity:
@@ -55,17 +54,6 @@ class ElinkModule(object):
             # value_list[value].append("1")
             value_list[value].append(0)  # 出度
             value_list[value].append(self.kb.count_by_v2e_name(value))  # 入度
-        # 由于知识库对于一些医疗领域的实体没有给出对应的mention，所以要特殊处理一步
-        """test_entity = "<"+mention+">"
-        if test_entity not in entity_list.keys():
-            try:
-                entity_list[test_entity] = []
-                entity_list[test_entity].append(qid)
-                entity_list[test_entity].append(mention)
-                entity_list[test_entity].append(test_entity)
-                #entity_list[test_entity].append("1")
-                entity_list[test_entity].append(kb.count_by_name(test_entity))  # 出度
-                entity_list[test_entity].append(kb.count_by_v2e_name(test_entity))  # 入度
-            except:
-                pass"""
         return entity_list, value_list
+    def getEntityFeatures(self):
+        return
