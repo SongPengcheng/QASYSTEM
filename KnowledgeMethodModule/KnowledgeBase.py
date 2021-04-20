@@ -30,6 +30,8 @@ class KnowledgeBase(object):
         self.kb_v2e_path = kb_v2e_path
         self.v2e_idx_dict = self.load_v2e_index()
         self.kb_v2e_fp = open(self.kb_v2e_path,"r",encoding="UTF-8")
+        self.m2e_index = self.load_dict(Resource().m2e_idx_path)
+        self.e2m_index = self.load_dict(Resource().e2m_idx_path)
         self.sp = "\t"
     def load_index(self):
         """
