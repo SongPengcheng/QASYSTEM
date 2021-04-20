@@ -379,6 +379,28 @@ class KnowledgeBase(object):
                     if edge == predicate:
                         neighbour.append(row)
         return neighbour
+    # 从图上获取实体一跳范围内的全部谓词
+    def getOneHopPredicates(self, graph, root):
+        """
+        :param graph: 知识图谱子图（即根节点一跳范围路径构成的子图）
+        :param root: 子图根节点
+        :return: 根节点在知识图谱中的全部一跳范围内的谓词
+        """
+        neighbor = set([y for x, y in graph.out_edges(root)] + [x for x, y in graph.in_edges(root)]) - set([root])
+        paths = []
+        for row in neighbor:
+            # 在知识库中，存在两个实体之间有多个属性相连接的情况，因此做了一些修改
+            try:
+                edgels = graph.edges[root, row]["prop"]
+                paths.extend(edgels)
+            except KeyError:
+                pass
+            try:
+                edgels = graph.edges[row, root]["prop"]
+                paths.extend(edgels)
+            except KeyError:
+                pass
+        return list(set(paths))
 
 if __name__ == '__main__':
     rs = Resource()
