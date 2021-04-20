@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2021/4/20 10:02 上午
 # @Author  : SPC
-# @FileName: NerMethod.py
+# @FileName: NerMedule.py
 # @Software: PyCharm
 # @Desn    : 定义关于实体识别的相关方法
 import re
