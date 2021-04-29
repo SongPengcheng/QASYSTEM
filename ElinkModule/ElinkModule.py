@@ -10,8 +10,7 @@ from KnowledgeMethodModule.KnowledgeBase import KnowledgeBase
 from RankModule.RankModel import RankModel
 from MathMethod import jaccard, hint, editDistance
 from BertModule.BertModel import BertModel
-punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}·，。：（）；’‘“”、？《》~ """
-rawstr = str.maketrans({key: None for key in punctuation})
+from Rule import punctuation,rawstr
 
 class ElinkModule(object):
     kb: KnowledgeBase

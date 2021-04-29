@@ -10,8 +10,7 @@ from KnowledgeMethodModule.KnowledgeBase import KnowledgeBase
 from PathGenerateModule.SearchQuery import Node, Path, QueryPath, PathInfo
 from MathMethod import jaccard, hint, editDistance
 from collections import defaultdict
-punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}·，。：（）；’‘“”、？《》~ """
-rawstr = str.maketrans({key: None for key in punctuation})
+from Rule import punctuation, rawstr
 
 class PathGenerateModule(object):
     def __init__(

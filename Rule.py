@@ -7,6 +7,8 @@
 # @Des     : 用于制定相关的规则
 
 import re
+punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}·，。：（）；’‘“”、？《》~ """
+rawstr = str.maketrans({key: None for key in punctuation})
 #同义词词典
 SYNONYM_MAP = {
     '丈夫': '丈夫，老公，配偶',

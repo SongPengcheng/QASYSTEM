@@ -15,8 +15,7 @@ import re
 import Resource as rs
 import pickle
 import random
-punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}·，。：（）；’‘“”、？《》~ """
-rawstr = str.maketrans({key: None for key in punctuation})
+from Rule import punctuation,rawstr
 punctuation2 = r"""!"#$%&'()*+,-./:;=@[\]^_`{|}·，。：（）；’‘“”、？《》~ """
 rawstr2 = str.maketrans({key: None for key in punctuation2})
 

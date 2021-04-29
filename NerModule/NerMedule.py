@@ -10,10 +10,8 @@ from Rule import entity_stop
 from Resource import Resource
 from MathMethod import jaccard, editDistance
 from KnowledgeMethodModule.KnowledgeBase import KnowledgeBase
+from Rule import punctuation,rawstr
 rs = Resource()
-
-punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}·，。：（）；’‘“”、？《》~ """
-rawstr = str.maketrans({key: None for key in punctuation})
 re_set = [".*的$","^的.*",".*是$","^是.*",".*和$"]
 replace_set = [".*检查$"]
 
